@@ -9,27 +9,49 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class bmiResult extends AppCompatActivity {
-    TextView result;
-    Button goback;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi_result);
-        result = (TextView) findViewById(R.id.result);
-        goback=(Button)findViewById(R.id.button2);
-
-
-        // create the get Intent object
         Intent intent = getIntent();
-        String str1 = intent.getStringExtra("BMI");
-        result.setText(str1);
 
-        goback.setOnClickListener(new View.OnClickListener() {
+        float BMI  = Math.round((intent.getFloatExtra("BMI", 0) * 100) / 100);
+        String age_value = intent.getStringExtra("age");
+
+        TextView your_bmi = findViewById(R.id.your_bmi);
+        your_bmi.setText(String.valueOf(BMI));
+
+        TextView age = findViewById(R.id.age);
+        age.setText(age_value);
+
+        TextView category = findViewById(R.id.category);
+        category category1 = new category();
+        category.setText(category1.getCategory(BMI));
+
+        TextView condition = findViewById(R.id.condition);
+        condition condition1 = new condition();
+        condition.setText(condition1.getCategory(BMI));
+
+        Button recalculate = findViewById(R.id.recalculate);
+        recalculate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(bmiResult.this, bmical.class);
-                startActivity(intent);
+            public void onClick(View v) {
+                updateUI();
             }
         });
+
+    }
+
+    private void updateUI() {
+        Intent intent1 = new Intent(bmiResult.this,bmical.class);
+        startActivity(intent1);
+        fileList();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        updateUI();
     }
 }

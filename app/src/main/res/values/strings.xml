@@ -3,4 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="account">Account</string>
+    <string name="male">male</string>
+    <string name="cm">cm</string>
+    <string name="recalculate">recalculate</string>
+    <string name="your_result">your_result</string>
+    <string name="_18_5_25_kg_m2">_18_5_25_kg_m2</string>
+    <string name="your_age">your_age</string>
+    <string name="normal_bmi_range">normal_bmi_range</string>
 </resources>
