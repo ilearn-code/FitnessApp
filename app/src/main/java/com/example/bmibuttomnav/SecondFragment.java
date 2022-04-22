@@ -24,12 +24,12 @@ public class SecondFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Button button = (Button) getView().findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), bmical.class));
+                startActivity(new Intent(getContext(),bmical.class));
             }
         });
     }
