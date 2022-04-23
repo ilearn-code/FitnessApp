@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BmiButtomNav">
         <activity
+            android:name=".NotificationMessage"
+            android:exported="false" />
+        <activity
+            android:name=".Reminder"
+            android:exported="false" />
+        <activity
             android:name=".tm"
             android:exported="false" />
         <activity
