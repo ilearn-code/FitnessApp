@@ -13,9 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class bmical extends AppCompatActivity {
-    float height,weight;
-    TextView height_txt,age;
-    int count_weight = 50,count_age = 19;
+    float height, weight;
+    TextView height_txt, age;
+    int count_weight = 50, count_age = 19;
     RelativeLayout weight_plus, weight_minus, age_plus, age_minus;
     boolean male_clk = true, female_clk = true, check1 = true, check2 = true;
 
@@ -83,9 +83,9 @@ public class bmical extends AppCompatActivity {
 
         CheckSeekbarStatus();
 
-        CheckWeight();
-
-        CheckAge();
+      CheckWeight();
+//
+    CheckAge();
 
         Button calculate = findViewById(R.id.calculate);
         calculate.setOnClickListener(new View.OnClickListener() {
@@ -174,4 +174,4 @@ public class bmical extends AppCompatActivity {
         intent.putExtra("age",age.getText().toString());
         startActivity(intent);
     }
-}
+    }

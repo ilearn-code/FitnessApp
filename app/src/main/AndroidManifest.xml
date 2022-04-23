@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BmiButtomNav">
         <activity
+            android:name=".tm"
+            android:exported="false" />
+        <activity
             android:name=".bmiResult"
             android:exported="false" />
         <activity

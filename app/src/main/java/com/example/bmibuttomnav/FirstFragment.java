@@ -22,17 +22,12 @@ public class FirstFragment extends Fragment {
         // or  (ImageView) view.findViewById(R.id.foo);
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-//        Intent i= new Intent(FirstFragment.this, st.class);
-//        startActivity(i);
         return inflater.inflate(R.layout.fragment_first, container, false);
 
-
         }
-
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Button button = (Button) getView().findViewById(R.id.button);
+        Button button = (Button) getView().findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,7 +35,7 @@ public class FirstFragment extends Fragment {
             }
         });
         }
-    }
+   }
 
 
 
