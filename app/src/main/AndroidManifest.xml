@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BmiButtomNav">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".account"
+            android:exported="false" />
+        <activity
             android:name=".NotificationMessage"
             android:exported="false" />
         <activity
