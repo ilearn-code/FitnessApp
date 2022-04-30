@@ -29,4 +29,10 @@
     <color name="cardwhite">#FFFFFF</color>
     <color name="lightblack">#7C7878</color>
     <color name="lightblue">#6491B5</color>
+
+
+    //added
+    <color name="royalblue">#246EE9</color>
+    <color name="darkthem">#121212</color>
+
 </resources>

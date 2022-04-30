@@ -7,27 +7,29 @@
     tools:context=".FirstFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/firstFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Steps Tracker"
-        android:textColor="#43a047"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="italic|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="72dp" />
+        app:layout_constraintVertical_bias="0.305" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="168dp"
+        android:layout_height="47dp"
         android:layout_marginTop="84dp"
-        android:text="Button"
+        android:background="@drawable/round"
+        android:text="Start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

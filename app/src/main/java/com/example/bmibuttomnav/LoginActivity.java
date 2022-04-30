@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void showMainActivity() {
-        Intent intent = new Intent(this, bmical.class);
+        Intent intent = new Intent(this, account.class);
         startActivity(intent);
         finish();
     }
