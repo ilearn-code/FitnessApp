@@ -15,11 +15,14 @@
 
     <Button
         android:id="@+id/task_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="99dp"
+        android:layout_height="37dp"
+        android:textColor="@color/white"
         android:layout_alignParentEnd="true"
-        android:onClick="deleteTask"
         android:layout_alignParentRight="true"
-        android:text="Task Completed" />
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:onClick="deleteTask"
+        android:text="Done" />
 
 </RelativeLayout>

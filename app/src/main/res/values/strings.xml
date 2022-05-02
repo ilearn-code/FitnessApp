@@ -21,7 +21,7 @@
     <string name="ft">ft</string>
     <string name="in">in</string>
     <string name="height">Height</string>
-    <string name="YourBmiText">Your BMI</string>
+    <string name="YourBmiText">BMI</string>
     <string name="bmiValue">20.5</string>
     <string name="bmiTips">You are underweight So you may need to put on some weight.</string>
     <string-array name="tips_array">

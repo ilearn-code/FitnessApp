@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/background">
+    >
 
     <TextView
         android:id="@+id/title_text"
@@ -16,7 +16,7 @@
         android:fontFamily="sans-serif-condensed-light"
         android:text="@string/title_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/text_color"
+        android:textColor="@color/black"
         android:textSize="36sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_layer_2">
+            android:background="@color/black">
 
             <TextView
                 android:id="@+id/weight_counter_text"
@@ -82,7 +82,7 @@
                     android:id="@+id/weight_btn_dec"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:backgroundTint="@color/bg_layer_3"
+                    app:backgroundTint="@color/white"
                     app:maxImageSize="35dp"
                     app:srcCompat="@drawable/ic_remove"
                     tools:layout_editor_absoluteX="120dp"
@@ -118,7 +118,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_layer_2">
+            android:background="@color/black">
 
             <TextView
                 android:id="@+id/age_counter_text"
@@ -150,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
-                    app:backgroundTint="@color/bg_layer_3"
+                    app:backgroundTint="@color/white"
                     app:maxImageSize="35dp"
                     app:srcCompat="@drawable/ic_add"
                     tools:layout_editor_absoluteX="32dp"
@@ -164,7 +164,7 @@
                     android:id="@+id/age_btn_dec"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:backgroundTint="@color/bg_layer_3"
+                    app:backgroundTint="@color/white"
                     app:maxImageSize="35dp"
                     app:srcCompat="@drawable/ic_remove"
                     tools:layout_editor_absoluteX="120dp"
@@ -199,7 +199,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/bg_layer_2">
+            android:background="@color/black">
 
             <TextView
                 android:id="@+id/height_title_text"
@@ -235,7 +235,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/bg_layer_3">
+                        android:background="@color/white">
 
                         <NumberPicker
 
@@ -281,7 +281,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/bg_layer_3">
+                        android:background="@color/white">
 
                         <NumberPicker
                             android:id="@+id/inch_picker"

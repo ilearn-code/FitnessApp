@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SecondFragment">
+    tools:context=".SecondFragment"
+  >
 
     <TextView
         android:id="@+id/secondFragment"
@@ -23,10 +24,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round"
+        android:layout_width="137dp"
+        android:layout_height="53dp"
+        android:background="@drawable/button_design"
         android:text="Calculate"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +43,11 @@
         android:fontFamily="sans-serif-medium"
         android:includeFontPadding="true"
         android:text="Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women."
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secondFragment"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
