@@ -29,7 +29,7 @@ public class ThirdFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), tm.class));
+                startActivity(new Intent(getContext(), todomain.class));
             }
         });
     }

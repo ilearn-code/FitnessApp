@@ -3,55 +3,102 @@ package com.example.bmibuttomnav;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class bmiResult extends AppCompatActivity {
-
+    TextView bmiValue, bmiCategory,bmiTips;
+    String category;
+    String bmiValOutput;
+    Button calculateAgainBtn;
+    String[] bmiTipsArray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi_result);
-        Intent intent = getIntent();
-
-        float BMI  = Math.round((intent.getFloatExtra("BMI", 0) * 100) / 100);
-        String age_value = intent.getStringExtra("age");
-
-        TextView your_bmi = findViewById(R.id.your_bmi);
-        your_bmi.setText(String.valueOf(BMI));
-
-        TextView age = findViewById(R.id.age);
-        age.setText(age_value);
-
-        TextView category = findViewById(R.id.category);
-        category category1 = new category();
-        category.setText(category1.getCategory(BMI));
-
-        TextView condition = findViewById(R.id.condition);
-        condition condition1 = new condition();
-        condition.setText(condition1.getCategory(BMI));
-
-        Button recalculate = findViewById(R.id.recalculate);
-        recalculate.setOnClickListener(new View.OnClickListener() {
+        bmiValue = findViewById(R.id.bmi_value);
+        bmiCategory = findViewById(R.id.bmi_category);
+        bmiTips = findViewById(R.id.bmi_tips);
+        bmiTipsArray = getResources().getStringArray(R.array.tips_array);
+        calculateAgainBtn = findViewById(R.id.calculate_again_btn);
+        bmiValOutput = getIntent().getStringExtra("bmiVal");
+        bmiValue.setText(bmiValOutput);
+        findCategory();
+        categoryTips();
+        calculateAgainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateUI();
+                onBackPressed();
             }
         });
 
     }
 
-    private void updateUI() {
-        Intent intent1 = new Intent(bmiResult.this,bmical.class);
-        startActivity(intent1);
-        fileList();
+    private void categoryTips() {
+        double result = Double.parseDouble(bmiValOutput);
+        if(result < 15){
+            bmiTips.setText(bmiTipsArray[0]);
+        }
+        else if(result >= 15 && result <= 16){
+            bmiTips.setText(bmiTipsArray[0]);
+        }
+        else if(result >= 16 && result <= 18.5){
+            bmiTips.setText(bmiTipsArray[1]);
+        }
+        else if(result >= 18.5 && result <= 25){
+            bmiTips.setText(bmiTipsArray[2]);
+        }
+        else if(result >= 25 && result <= 30){
+            bmiTips.setText(bmiTipsArray[3]);
+        }
+        else if(result >=30 && result <= 35){
+            bmiTips.setText(bmiTipsArray[4]);
+        }
+        else if(result >= 35 && result <= 50){
+            bmiTips.setText(bmiTipsArray[4]);
+        }
+        else
+            bmiTips.setText(bmiTipsArray[4]);
+
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        updateUI();
+    private void findCategory() {
+        double result = Double.parseDouble(bmiValOutput);
+        if(result < 15){
+            category = "Very Severely Underweight";
+            bmiCategory.setText(category);
+        }
+        else if(result >= 15 && result <= 16){
+            category = "Severely Underweight";
+            bmiCategory.setText(category);
+        }
+        else if(result >= 16 && result <= 18.5){
+            category = "Underweight";
+            bmiCategory.setText(category);
+        }
+        else if(result >= 18.5 && result <= 25){
+            category = "Normal (Healthy weight)";
+            bmiCategory.setText(category);
+        }
+        else if(result >= 25 && result <= 30){
+            category = "Overweight";
+            bmiCategory.setText(category);
+        }
+        else if(result >=30 && result <= 35){
+            category = "Moderately Obese";
+            bmiCategory.setText(category);
+        }
+        else if(result >= 35 && result <= 50){
+            bmiCategory.setText(category);
+            category = "Severely Obese";
+        }
+        else
+            category = "Very Severely Obese";
+        bmiCategory.setText(category);
+
     }
 }

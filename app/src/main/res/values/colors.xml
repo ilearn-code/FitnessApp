@@ -23,14 +23,22 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
 
     <color name="cardwhite">#FFFFFF</color>
     <color name="lightblack">#7C7878</color>
     <color name="lightblue">#6491B5</color>
 
-
+    <color name="bg_layer_2">#323232</color>
+    <color name="bg_layer_3">#525252</color>
+    <color name="bg_layer_4">#414141</color>
+    <color name="bg_layer_5">#313131</color>
+    <color name="text_color">#eeeeee</color>
+    <color name="red">#f51b00</color>
+    <color name="orange">#f05e23</color>
+    <color name="green">#008000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
     //added
     <color name="royalblue">#246EE9</color>
     <color name="darkthem">#121212</color>

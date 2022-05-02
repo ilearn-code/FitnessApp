@@ -1,177 +1,149 @@
 package com.example.bmibuttomnav;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.SeekBar;
-import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-public class bmical extends AppCompatActivity {
-    float height, weight;
-    TextView height_txt, age;
-    int count_weight = 50, count_age = 19;
-    RelativeLayout weight_plus, weight_minus, age_plus, age_minus;
-    boolean male_clk = true, female_clk = true, check1 = true, check2 = true;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.NumberPicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.text.DecimalFormat;
+
+public class bmical extends AppCompatActivity implements View.OnClickListener {
+    CardView weightCardView;
+    CardView ageCardView;
+    TextView weightCounterText, ageCounterText, height_title_text;
+    FloatingActionButton weightBtnInc, ageBtnInc;
+    FloatingActionButton weightBtnDec, ageBtnDec;
+    int weightCounter = 50;
+    int ageCounter = 25;
+    String countWeight, countAge;
+    NumberPicker feetPicker, inchPicker;
+    int feetValue = 5 , inchValue = 4;
+    Button calculateBtn;
+    String heightValue;
+    DecimalFormat decimalFormat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmical);
-        height_txt = findViewById(R.id.height_txt);
+        weightCardView = findViewById(R.id.weight_cardView);
+        ageCardView = findViewById(R.id.age_cardView);
+        weightCounterText = findViewById(R.id.weight_counter_text);
+        ageCounterText = findViewById(R.id.age_counter_text);
+        weightBtnInc = findViewById(R.id.weight_btn_inc);
+        weightBtnDec = findViewById(R.id.weight_btn_dec);
+        ageBtnInc = findViewById(R.id.age_btn_inc);
+        ageBtnDec = findViewById(R.id.age_btn_dec);
+        feetPicker = findViewById(R.id.feet_picker);
+        inchPicker = findViewById(R.id.inch_picker);
+        height_title_text = findViewById(R.id.height_title_text);
+        calculateBtn = findViewById(R.id.calculate_btn);
+        counterInit();
+        decimalFormat = new DecimalFormat(".#");
+        weightCardView.setOnClickListener(this);
+        ageCardView.setOnClickListener(this);
+        weightBtnInc.setOnClickListener(this);
+        weightBtnDec.setOnClickListener(this);
+        ageBtnInc.setOnClickListener(this);
+        ageBtnDec.setOnClickListener(this);
 
-        final TextView female_text = findViewById(R.id.female);
-        final TextView male_text = findViewById(R.id.male);
-
-        CardView card_female = findViewById(R.id.cardView_female);
-        CardView card_male = findViewById(R.id.cardView_male);
-
-        age_minus = findViewById(R.id.age_minus);
-        age_plus = findViewById(R.id.age_plus);
-
-        weight_minus = findViewById(R.id.weight_minus);
-        weight_plus = findViewById(R.id.weight_plus);
-
-        card_male.setOnClickListener(new View.OnClickListener() {
+        feetPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
-            public void onClick(View v) {
-                if (check1) {
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                feetValue = newVal;
+                heightValueIs();
 
-                    if (male_clk) {
-
-                        male_text.setTextColor(Color.parseColor("#FFFFFF"));
-                        male_text.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.male_white,0,0);
-                        male_clk = false;
-                        check2 = false;
-
-                    } else {
-
-                        male_text.setTextColor(Color.parseColor("#8D8E99"));
-                        male_text.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.male,0,0);
-                        male_clk = true;
-                        check2 = true;
-                    }
-                }
             }
         });
 
-        card_female.setOnClickListener(new View.OnClickListener() {
+        inchPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
-            public void onClick(View v) {
-                if (check2) {
-                    if (female_clk) {
-                        female_text.setTextColor(Color.parseColor("#FFFFFF"));
-                        female_text.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.female_white,0,0);
-                        female_clk = false;
-                        check1 = false;
-                    }
-                    else  {
-
-                        female_text.setTextColor(Color.parseColor("#8D8E99"));
-                        female_text.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.female,0,0);
-                        female_clk = true;
-                        check1 = true;
-                    }
-                }
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                inchValue = newVal;
+                heightValueIs();
             }
         });
-
-        CheckSeekbarStatus();
-
-      CheckWeight();
-//
-    CheckAge();
-
-        Button calculate = findViewById(R.id.calculate);
-        calculate.setOnClickListener(new View.OnClickListener() {
+        calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CalculateBMI();
-            }
-        });
-
-    }
-
-
-    private void CheckAge() {
-
-        age = findViewById(R.id.age);
-
-        age_plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count_age++;
-                age.setText(String.valueOf(count_age));
-            }
-        });
-
-        age_minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count_age--;
-                age.setText(String.valueOf(count_age));
+                calculateBmi();
             }
         });
     }
 
-    private void CheckWeight() {
-
-        final TextView weight_txt = findViewById(R.id.weight);
-
-        weight_plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count_weight++;
-                weight_txt.setText(String.valueOf(count_weight));
-            }
-        });
-
-        weight_minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count_weight--;
-                weight_txt.setText(String.valueOf(count_weight));
-            }
-        });
-
-        weight = Float.parseFloat(weight_txt.getText().toString());
-
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.weight_cardView:
+                break;
+            case R.id.weight_btn_inc:
+                if(weightCounter < 700)
+                    weightCounter++;
+                countWeight = Integer.toString(weightCounter);
+                weightCounterText.setText(countWeight);
+                break;
+            case R.id.weight_btn_dec:
+                if(weightCounter > 0)
+                    weightCounter--;
+                countWeight = Integer.toString(weightCounter);
+                weightCounterText.setText(countWeight);
+                break;
+            case R.id.age_cardView:
+                break;
+            case R.id.age_btn_inc:
+                if(ageCounter < 150)
+                    ageCounter++;
+                countAge = Integer.toString(ageCounter);
+                ageCounterText.setText(countAge);
+                break;
+            case R.id.age_btn_dec:
+                if(ageCounter > 1)
+                    ageCounter--;
+                countAge = Integer.toString(ageCounter);
+                ageCounterText.setText(countAge);
+                break;
+        }
     }
 
-    private void CheckSeekbarStatus() {
-
-        SeekBar Seekbar = findViewById(R.id.Seekbar);
-        Seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                String ht = progress + getResources().getString(R.string.cm);
-                height_txt.setText(ht);
-                height = (float)(progress)/100;
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
+    private void counterInit() {
+        countWeight = Integer.toString(weightCounter);
+        weightCounterText.setText(countWeight);
+        countAge = Integer.toString(ageCounter);
+        ageCounterText.setText(countAge);
+        feetPicker.setMinValue(1);
+        feetPicker.setMaxValue(8);
+        inchPicker.setMinValue(0);
+        inchPicker.setMaxValue(11);
+        feetPicker.setValue(5);
+        inchPicker.setValue(4);
+        heightValueIs();
     }
-
-    private void CalculateBMI() {
-
-        float BMI = weight / (height * height);
-        Intent intent = new Intent(bmical.this,bmiResult.class);
-        intent.putExtra("BMI",BMI);
-        intent.putExtra("age",age.getText().toString());
+    public void heightValueIs()
+    {
+        if(inchValue == 0){
+            heightValue = feetValue + " feet ";
+            height_title_text.setText(heightValue);
+        }
+        else
+            heightValue = feetValue + " feet " + inchValue +" inches";
+        height_title_text.setText(heightValue);
+    }
+    public void calculateBmi(){
+        double heightInInches = feetValue * 12 + inchValue;
+        double heightInMetres = heightInInches / 39.37;
+        double heightInMetreSq = heightInMetres * heightInMetres;
+        double bmi = weightCounter / heightInMetreSq;
+        String bmiValue = decimalFormat.format(bmi);
+        Intent intent = new Intent(this,bmiResult.class);
+        intent.putExtra("bmiVal",bmiValue);
         startActivity(intent);
     }
-    }
+}

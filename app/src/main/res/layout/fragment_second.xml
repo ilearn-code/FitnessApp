@@ -35,16 +35,16 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="387dp"
-        android:layout_height="105dp"
+        android:layout_width="333dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="224dp"
         android:fontFamily="sans-serif-medium"
         android:includeFontPadding="true"
         android:text="Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women."
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintTop_toBottomOf="@+id/secondFragment"
+        app:layout_constraintVertical_bias="0.011" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
