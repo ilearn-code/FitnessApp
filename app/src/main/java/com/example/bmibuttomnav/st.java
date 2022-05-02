@@ -9,20 +9,29 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 public class st extends AppCompatActivity {
     private TextView textView;
     private double MagnitudePrevious = 0;
     private Integer stepCount = 0;
     Button reset;
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_st);
         textView=findViewById(R.id.textView);
          reset=findViewById(R.id.reset);
+       imageView = findViewById(R.id.imageView2);
+
+        // Adding the gif here using glide library
+        Glide.with(this).load(R.drawable.giphy).into(imageView);
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
