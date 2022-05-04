@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BmiButtomNav">
-        <activity
-            android:name=".todoaddtask"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".splash"-->
+<!--            android:exported="false" />-->
+
         <activity
             android:name=".todomain"
             android:exported="false" />
@@ -42,14 +43,16 @@
         <activity
             android:name=".st"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+        <activity android:name=".splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 
