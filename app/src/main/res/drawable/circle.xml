@@ -2,13 +2,14 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
    <item> <!-- creates an oval shape -->
-    <shape android:shape="oval">
+       <shape android:layout_width="match_parent" android:layout_height="match_parent" android:shape="oval">
 
-        <!-- giving the color and width to the stroke -->
-        <stroke android:color="#2c2c2c" android:width="5dp"/>
+           <!-- giving the color and width to the stroke -->
+           <stroke android:width="8dp" android:color="@color/black" />
 
-        <!-- giving the width and the height to the shape -->
-        <size android:width="120dp" android:height="120dp"/>
-    </shape>
+           <!-- giving the width and the height to the shape -->
+           <size android:width="120dp" android:height="120dp" />
+
+       </shape>
 </item>
 </selector>

@@ -17,7 +17,7 @@
 
         android:textColor="@color/black"
         android:textSize="40sp"
-        android:textStyle="italic|bold"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,24 +36,17 @@
 
     <TextView
         android:id="@+id/textView7"
-
-        android:layout_width="336dp"
-        android:layout_height="181dp"
+        android:layout_width="327dp"
+        android:layout_height="91dp"
+        android:background="@drawable/rectbox"
         android:text="To-do List is a task keeper.User enters the tasks that he/she needs to do. Once the task is completed,User can remove task from the list using done button"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thirdFragment"
-        app:layout_constraintVertical_bias="0.323" />
-    tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="207dp"""
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thirdFragment"
-        app:layout_constraintVertical_bias="0.204" />
+        app:layout_constraintVertical_bias="0.426" />
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,10 +28,10 @@ public class st extends AppCompatActivity {
         setContentView(R.layout.activity_st);
         textView=findViewById(R.id.textView);
          reset=findViewById(R.id.reset);
-       imageView = findViewById(R.id.imageView2);
+//       imageView = findViewById(R.id.imageView2);
 
         // Adding the gif here using glide library
-        Glide.with(this).load(R.drawable.giphy).into(imageView);
+//        Glide.with(this).load(R.drawable.giphy).into(imageView);
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
