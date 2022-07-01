@@ -20,7 +20,7 @@
         android:text="STEPS"
         android:textColor="@color/Black"
         android:textSize="45sp"
-        android:textStyle="bold"
+        android:textStyle=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
