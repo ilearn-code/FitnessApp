@@ -5,7 +5,6 @@ a to do list to store user lists.A custom registration ans authentification usin
 
 
 #bmi
-
 <img src="project pics/bmi/1.png" width=120 height=200>
 <img src="project pics/bmi/2.png" width=120 height=200>
 <img src="project pics/bmi/3.png" width=120 height=200>
