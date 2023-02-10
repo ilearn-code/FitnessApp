@@ -17,6 +17,9 @@ a to do list to store user lists.A custom registration ans authentification usin
 #step tracker
 <img src="project pics/steps tracker/1.png" width=120 height=200>
 <img src="project pics/steps tracker/2.png" width=120 height=200>
+<img src="project pics/steps tracker/3.png" width=120 height=200>
+<img src="project pics/steps tracker/4.png" width=120 height=200>
+
 
 
 #todolist
